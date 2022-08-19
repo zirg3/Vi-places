@@ -3,7 +3,12 @@ import {useRouter} from "next/router";
 import React from "react";
 import Link from "next/link";
 
-const navItems = [
+type TypeNavItem = {
+    icon: string
+    link: string
+}
+
+const navItems: TypeNavItem[] = [
     {
         icon: 'home',
         link: '/'
@@ -14,7 +19,7 @@ const navItems = [
     },
     {
         icon: 'place',
-        link: '/place'
+        link: '/place/kyoto'
     },
     {
         icon: 'person_outline',
