@@ -19,7 +19,7 @@
       transition: color 0.4s ease;
       font-size: 2rem;
       color: $gray;
-
+      cursor: pointer;
       &:hover,
       &.active {
         color: $accent;

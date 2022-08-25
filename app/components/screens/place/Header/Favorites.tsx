@@ -26,7 +26,7 @@ const Favorites:FC = () => {
 
     return (
         <div className={styles.bookmark}>
-            <button onClick={() => setIsOpen(!isOpen)}>
+            <button onClick={() => setIsOpen(!isOpen)} className={styles.svgHover}>
                 <span className={styles.buttonWrapper}>
                     <BsBookmarkHeart size={20} color='#e8e8e8'/>
                 </span>

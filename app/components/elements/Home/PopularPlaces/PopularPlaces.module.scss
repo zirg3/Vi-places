@@ -32,7 +32,7 @@
   &:hover >.heading {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    color: $accent;
+    color: $hoverMain;
   }
   &::after {
     content: '';
@@ -63,6 +63,8 @@
     justify-content: center;
     text-align: center;
     transition: .4s;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
   }
 
   > button {

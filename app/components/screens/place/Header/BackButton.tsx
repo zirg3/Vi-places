@@ -6,7 +6,7 @@ import {BsChevronLeft} from 'react-icons/bs'
 const BackButton:FC = () => {
     return (
         <Link href='/'>
-            <a>
+            <a className={styles.svgHover}>
                 <span className={styles.buttonWrapper}>
                     <BsChevronLeft size={20} color='#e8e8e8'/>
                 </span>

@@ -17,10 +17,11 @@
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    justify-content: center;
 
     > h1 {
       color: $white;
-      font-size: 20px;
+      font-size: 24px;
       margin: 0 0 0 1rem;
     }
   }
@@ -29,18 +30,26 @@
     color: $white;
     opacity: 0.8;
     line-height: 1.6;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    text-align: center;
   }
 
   .additional {
     margin-top: 1rem;
+    //display: grid;
     display: flex;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+    grid-auto-rows: 1fr;
+    grid-gap: 15px;
+    flex-wrap: wrap;
+    //justify-content: space-around;
+    //align-items: center;
+    justify-content: center;
 
     .rating {
-      margin-right: 1.5rem;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 10px 15px;
       border-radius: 30px;
       border: 2px solid rgba(255, 255, 255, 0.04);
@@ -53,9 +62,9 @@
     }
 
     .duration {
-      margin-right: 2rem;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 10px 15px;
       border-radius: 30px;
       border: 2px solid rgba(255, 255, 255, 0.04);

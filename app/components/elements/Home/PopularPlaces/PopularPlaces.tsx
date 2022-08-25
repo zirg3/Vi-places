@@ -5,6 +5,7 @@ import {IPlace} from "../../../../types/place";
 import Link from "next/link";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import {urlFor} from "../../../../../lib/sanity";
 
 interface IPopularPlaces {
     places: IPlace[]
@@ -28,10 +29,10 @@ const PopularPlaces:FC <IPopularPlaces> = ({places, isLoading}) => {
                 </div>
                 ) : places.length ? (
                 places.map(place => (
-                <Link href={`place/${place.slug}`} key={place.slug}>
-                    <a className={styles.item} style={{backgroundImage: `url(${place.imagePath})`}}>
+                <Link href={`place/${place.slug.current}`} key={place._id}>
+                    <a className={styles.item} style={{backgroundImage: `url(${urlFor(place.imagePath).url()})`}}>
                         <span className={styles.heading}>
-                            {place.location.city + ', ' + place.location.country}
+                            {place.location.city + ', ' + place.location.country.rus}
                         </span>
                     </a>
                 </Link>

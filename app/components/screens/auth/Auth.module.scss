@@ -1,0 +1,66 @@
+@import '../../../../assets/styles/variables';
+
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  font-size: 1.7em;
+}
+.wrapper {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+
+  .input {
+    @include glassEffect;
+    transition: border 0.4s ease;
+
+    border: 1px solid transparent;
+    outline: none;
+
+    color: $white;
+
+    border-radius: 30px;
+    width: 100%;
+    font-size: 15px;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    &:focus {
+      border-color: rgba($accent, 0.5);
+    }
+
+    &::placeholder {
+      color: #515054;
+    }
+  }
+
+  .error {
+    color: $accent;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    //position: absolute;
+    //bottom: -6px;
+    //left: 0;
+  }
+}
+
+.changeType {
+  text-align: center;
+  margin-top: 20px;
+
+  > button {
+    color: #ccc;
+    transition: .4s ease;
+    &:hover {
+      color: $hoverMain;
+    }
+  }
+}
