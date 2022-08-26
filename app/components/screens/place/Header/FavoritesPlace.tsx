@@ -21,12 +21,12 @@ const data:IFav[] = [
 ]
 
 
-const Favorites:FC = () => {
+const FavoritesPlace:FC = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
         <div className={styles.bookmark}>
-            <button onClick={() => setIsOpen(!isOpen)}>
+            <button onClick={() => setIsOpen(!isOpen)} className={styles.svgHover}>
                 <span className={styles.buttonWrapper}>
                     <BsBookmarkHeart size={20} color='#e8e8e8'/>
                 </span>
@@ -47,4 +47,4 @@ const Favorites:FC = () => {
     );
 };
 
-export default Favorites;
+export default FavoritesPlace;

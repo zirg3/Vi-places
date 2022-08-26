@@ -1,8 +1,8 @@
-$accent: #eb601e;
+$accent: rgb(235, 96, 30);
 $gray: #807e7f;
 $bg-color: #161617;
 $white: #e8e8e8;
-$hoverMain: #a16346;
+$hoverMain: rgba(161, 99, 70, 1);
 
 @mixin glassEffect() {
   //	background: rgba(255, 255, 255, 0.03);

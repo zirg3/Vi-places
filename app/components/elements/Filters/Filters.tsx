@@ -1,29 +1,10 @@
 import {FC, useState} from 'react';
-import styles from '../Filters/Filters.module.scss'
-import cn from 'classnames'
+import styles from '../Filters/Filters.module.scss';
+import cn from 'classnames';
 import {TypeSetState} from "../../../types/common";
 import {IPlace} from "../../../types/place";
+import uniqBy from 'lodash/uniqBy';
 
-const countries = [
-    {
-    location: 'Париж',
-    },
-    {
-    location: 'Перу',
-    },
-    {
-    location: 'Гаити',
-    },
-    {
-    location: 'Япония',
-    },
-    {
-    location: 'Египет',
-    },
-    {
-    location: 'Италия',
-    },
-]
 
 interface IFilters {
     setPlaces: TypeSetState<IPlace[]>
@@ -39,7 +20,7 @@ const Filters: FC<IFilters> = ({setPlaces, initialPlaces}) => {
             setFilter('')
         } else {
             setPlaces(initialPlaces.filter(place =>
-                place.location.country.toLowerCase() === location.toLowerCase()
+                place.location.country.rus.toLowerCase() === location.toLowerCase()
             ))
             setFilter(location)
         }
@@ -47,14 +28,14 @@ const Filters: FC<IFilters> = ({setPlaces, initialPlaces}) => {
 
     return (
         <div className={styles.wrapper}>
-            {countries.map(country => (
+            {uniqBy(initialPlaces, 'location.country.rus').map(country => (
                 <button
-                    key={country.location}
-                    onClick={() => handleFilter(country.location)}
+                    key={country.location.city}
+                    onClick={() => handleFilter(country.location.country.rus)}
                     className={cn({
-                        [styles.active]: country.location === filter
+                        [styles.active]: country.location.country.rus === filter
                     })}
-                >{country.location}</button>
+                >{country.location.country.rus}</button>
                 ))}
         </div>
     );

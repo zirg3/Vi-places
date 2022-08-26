@@ -32,7 +32,7 @@
   &:hover >.heading {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
-    color: $accent;
+    color: $hoverMain;
   }
   &::after {
     content: '';
@@ -63,13 +63,22 @@
     justify-content: center;
     text-align: center;
     transition: .4s;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
   }
 
   > button {
-    color: #f32a33;
+    color: $accent;
     position: absolute;
     right: 10px;
     z-index: 1;
+    transition: .4s ease;
+    &:hover {
+      color: $hoverMain;
+    }
+  }
+  .iconRemove {
+    font-size: 40px;
   }
 }
 

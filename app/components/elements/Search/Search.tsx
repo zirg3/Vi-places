@@ -20,7 +20,7 @@ const Search: FC<ISearch> = ({setPlaces, initialPlaces, setIsLoading}) => {
         if (value) {
             setPlaces(initialPlaces.filter(place => (
                 place.location.city.toLowerCase().includes(value.toLowerCase()) ||
-                place.location.country.toLowerCase().includes(value.toLowerCase())
+                place.location.country.rus.toLowerCase().includes(value.toLowerCase())
             )))
         } else {
             setPlaces(initialPlaces)

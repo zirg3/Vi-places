@@ -5,6 +5,8 @@ import {IPlace} from "../../../../types/place";
 import Link from "next/link";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import {urlFor} from "../../../../../lib/sanity";
+import PlaceItem from "./PlaceItem";
 
 interface IPopularPlaces {
     places: IPlace[]
@@ -28,20 +30,16 @@ const PopularPlaces:FC <IPopularPlaces> = ({places, isLoading}) => {
                 </div>
                 ) : places.length ? (
                 places.map(place => (
-                <Link href={`place/${place.slug}`} key={place.slug}>
-                    <a className={styles.item} style={{backgroundImage: `url(${place.imagePath})`}}>
-                        <span className={styles.heading}>
-                            {place.location.city + ', ' + place.location.country}
-                        </span>
-                    </a>
-                </Link>
-            ))) : <div style={{
+                    <PlaceItem place={place} key={place._id}/>
+                ))
+                ) : (
+                    <div style={{
                     marginTop:'-2rem',
                     color: '#e8e8e8',
                     opacity:'.6',
                     fontStyle:'italick'
                 }}>Ничего не найдено :(</div>
-            }
+            )}
         </div>
     );
 };

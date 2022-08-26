@@ -1,18 +1,26 @@
-type TypeLocation = {
+export type TypeLocation = {
     city: string,
-    country: string
+    country: {
+        rus: string,
+        eng: string
+    }
 }
 
+export type TypeSlug = {
+    _type: string,
+    current: string
+}
+
+
 export interface IPlace {
-    slug: string
+    slug: TypeSlug
     location: TypeLocation
     imagePath: string
     description: string
     rating: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
     duration: string
     distance: number
-    googleMapLink: string
-    mapImage: string
+    _id: string
 }
 
 export interface IFav {

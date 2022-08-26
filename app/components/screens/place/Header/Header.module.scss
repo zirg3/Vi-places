@@ -7,7 +7,7 @@
   width: 80%;
   padding: 2rem 0;
   margin: 0 auto;
-
+  z-index: 10!important;
   .buttonWrapper {
     border-radius: 50%;
     width: 55px;
@@ -18,13 +18,21 @@
     @include glassEffect;
     color: #e8e8e8;
     font-size: 1.6em;
-    transition: color 0.4s ease-in-out;
+    transition: color,box-shadow 0.4s ease-in-out;
 
     &:hover {
       color: $accent;
     }
   }
+  .svgHover span{
+    transition: .4s ease;
+  }
 
+  .svgHover:hover span{
+    border-radius: 50%;
+    box-shadow: 0 0 30px $hoverMain;
+    background-color: $hoverMain;
+  }
   .bookmark {
     position: relative;
 
