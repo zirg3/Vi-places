@@ -24,6 +24,9 @@
       &.active {
         color: $accent;
       }
+      @media (max-width: 600px) {
+        margin: 0 1rem;
+      }
     }
   }
 

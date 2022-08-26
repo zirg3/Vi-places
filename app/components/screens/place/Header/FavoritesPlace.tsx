@@ -21,7 +21,7 @@ const data:IFav[] = [
 ]
 
 
-const Favorites:FC = () => {
+const FavoritesPlace:FC = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -47,4 +47,4 @@ const Favorites:FC = () => {
     );
 };
 
-export default Favorites;
+export default FavoritesPlace;

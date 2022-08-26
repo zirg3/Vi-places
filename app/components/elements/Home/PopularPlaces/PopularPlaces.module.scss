@@ -68,10 +68,17 @@
   }
 
   > button {
-    color: #f32a33;
+    color: $accent;
     position: absolute;
     right: 10px;
     z-index: 1;
+    transition: .4s ease;
+    &:hover {
+      color: $hoverMain;
+    }
+  }
+  .iconRemove {
+    font-size: 40px;
   }
 }
 

@@ -4,10 +4,14 @@ import NextNProgress from "nextjs-progressbar";
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import {SessionProvider} from "next-auth/react";
+import AuthProvider from "../app/providers/AuthProvider/AuthProvider";
+import {NextPage} from "next";
+import {NextPageAuth} from "../app/types/auth";
 
 
 function MyApp({ Component, pageProps: {session, ...pageProps}}: AppProps) {
-  return (
+
+    return (
       <>
         <NextNProgress
             color="rgb(235, 96, 30)"
@@ -17,8 +21,10 @@ function MyApp({ Component, pageProps: {session, ...pageProps}}: AppProps) {
             showOnShallow={true}
         />
         <SessionProvider session={session}>
-            <Component {...pageProps} />
-            <ToastContainer theme='light'/>
+            <AuthProvider Component={Component}>
+                <Component {...pageProps} />
+                <ToastContainer theme='light'/>
+            </AuthProvider>
         </SessionProvider>
       </>
   )

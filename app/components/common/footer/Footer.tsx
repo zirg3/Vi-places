@@ -17,12 +17,12 @@ const navItems: TypeNavItem[] = [
         link: '/'
     },
     {
-        icon: 'explore',
-        link: '/explore'
+        icon: 'favorite_outline',
+        link: '/favorites'
     },
     {
-        icon: 'place',
-        link: '/place/kyoto'
+        icon: 'manage_accounts',
+        link: '/profile'
     },
     // {
     //     icon: 'person_outline',
@@ -45,16 +45,16 @@ const Footer = () => {
                         </a>
                     </Link>
                 ))}
-                <a onClick={() => {
+                <a onClick={async () => {
                     if (data) {
-                        signOut({redirect: false})
+                        await signOut({redirect: false})
                         toast.success("Вы вышли из аккаунта")
                         router.push('/auth')
                     } else {
                         router.push('/auth')
                     }
                 }} className={`material-icons-outlined ${router.pathname === '/auth' ? styles.active : ''}`}>
-                    {data ? 'logout' : 'person_outline'}
+                    {data ? 'logout' : 'account_circle'}
                 </a>
             </nav>
         </footer>
