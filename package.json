@@ -4,11 +4,14 @@
   "private": true,
   "main": "_app.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "sanity": "cd studio && sanity start",
-    "lint": "next lint"
+    "build": "npm run build:sanity && npm run build:web",
+    "build:sanity": "npm --prefix studio run build",
+    "build:web": "next build",
+    "dev": "next",
+    "fmt": "prettier --ignore-path .gitignore --write --cache .",
+    "postinstall": "(cd studio && npx @sanity/cli install)",
+    "start:sanity": "npm --prefix studio run start",
+    "start:web": "next start"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
