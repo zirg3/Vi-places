@@ -30,6 +30,7 @@
     "sass": "^1.54.4"
   },
   "devDependencies": {
+    "@sanity/cli": "^2.31.0",
     "@types/classnames": "^2.3.1",
     "@types/lodash": "^4.14.184",
     "@types/node": "18.7.2",

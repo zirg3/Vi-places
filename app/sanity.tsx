@@ -20,7 +20,9 @@ export const config: ClientConfig = {
 
 export const sanityClient = createClient(config)
 
+// @ts-ignore
 export const usePreviewSubscription = createPreviewSubscriptionHook(config)
+// @ts-ignore
 export const urlFor = (source: SanityImageSource) => createImageUrlBuilder(config).image(source)
 export const PortableText = (props: JSX.IntrinsicAttributes & PortableTextProps<PortableTextBlock<PortableTextMarkDefinition, ArbitraryTypedObject | PortableTextSpan, string, string>>) => (
     <PortableTextComponent components={{}} {...props} />
