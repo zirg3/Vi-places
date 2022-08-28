@@ -9,7 +9,8 @@ import {NextPage} from "next";
 import {NextPageAuth} from "../app/types/auth";
 
 
-function MyApp({ Component, pageProps: {session, ...pageProps}}: AppProps) {
+// @ts-ignore
+function MyApp({ Component, pageProps: {session, ...pageProps}}) {
 
     return (
       <>

@@ -6,8 +6,12 @@ const DynamicCheckRoll = dynamic(() => import('../AuthProvider/CheckRole'), {
     ssr: false
 })
 
-// @ts-ignore
-const AuthProvider:FC<TypeComponentAuthFields> = ({children, Component: {isOnlyUser, isAdmin}}) => {
+
+interface IAuthProvider {
+    Component: { isOnlyUser: boolean, isAdmin: boolean }
+    children: ReactNode
+}
+const AuthProvider:FC<IAuthProvider> = ({children, Component: {isOnlyUser, isAdmin}}) => {
 
 
     if(!isOnlyUser && !isAdmin) {
