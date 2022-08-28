@@ -29,7 +29,7 @@ export const getStaticPaths:GetStaticPaths = async () => {
         params: {slug: post.slug.current}
     }))
 
-    return { paths, fallback: true}
+    return { paths, fallback: false}
 }
 
 export const getStaticProps:GetStaticProps = async ({params}) => {
