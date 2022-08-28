@@ -1,11 +1,24 @@
 /** @type {import('next').NextConfig} */
-
+module.exports = {
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+}
 const STUDIO_REWRITE = {
   source: "/studio/:path*",
   destination:
       process.env.NODE_ENV === "development"
           ? "http://localhost:3333/studio/:path*"
-          : "/travel-vi/index.html",
+          : "/studio/index.html",
 };
 
 const nextConfig = {

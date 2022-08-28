@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/travel-vi/node_modules
+/studio/node_modules
 
 # testing
 /coverage
@@ -36,4 +36,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/travel-vi/node_modules/
+/studio/node_modules/
