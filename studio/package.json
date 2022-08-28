@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "build": "sanity build public -y"
+    "build": "npx @sanity/cli build ../public/studio -y"
   },
   "keywords": [
     "sanity"
