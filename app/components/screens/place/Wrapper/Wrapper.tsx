@@ -2,7 +2,7 @@ import {FC, ReactNode} from 'react';
 import styles from '../Wrapper/Wrapper.module.scss'
 import {url} from "inspector";
 
-const Wrapper:FC<{ imagePath: string, children: ReactNode }> = ({imagePath,children}) => {
+const Wrapper:FC<{ imagePath?: string, children: ReactNode }> = ({imagePath,children}) => {
     return (
         <div
             className={styles.wrapper}

@@ -17,7 +17,7 @@ interface IHome {
  const Home:NextPage<IHome> = ({initialPlaces}) => {
     const [places, setPlaces] = useState(initialPlaces)
     const [isLoading, setIsLoading] = useState(false)
-
+     console.log(initialPlaces)
   return (
       <Layout>
           <Meta
@@ -42,7 +42,8 @@ export const getStaticProps:GetStaticProps = async () => {
   return {
     props: {
         initialPlaces: response
-    }
+    },
+    revalidate: 1,
   }
 }
 
