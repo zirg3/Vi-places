@@ -12,13 +12,11 @@ import {
 
 export const config: ClientConfig = {
     projectId: 'zrzrh6st',
-    dataset: 'production',
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
     apiVersion: '2021-10-21',
     useCdn: false,
     token: process.env.SANITY_API_TOKEN,
 }
-
-export const sanityClient = createClient(config)
 
 // @ts-ignore
 export const usePreviewSubscription = createPreviewSubscriptionHook(config)

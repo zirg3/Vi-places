@@ -27,6 +27,9 @@ const nextConfig = {
   env: {
     APP_URL: 'http://localhost:3000'
   },
+  images: {
+    domains: ['cdn.sanity.io', 'source.unsplash.com'],
+  },
   rewrites: () => [STUDIO_REWRITE],
 }
 
